@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Libro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-4 mt-3">
+            <h3 class="display-4">Crear Categoria</h3>
+            <div class="formulario mt-3">
+                <div class="form-group">
+                    <label>Categoria:</label>
+                    <input type="text"
+                           id="categoria" class="form-control">
+                </div>
+                <button class="btn btn-info btn-lg w-100 mt-3" id="btnAgregar">Agregar</button>
+                <a href="index.html" class="btn btn-outline-danger btn-lg w-100 mt-3">Regresar</a>
+            </div>
+            <div class="mt-5 d-none" id="ok">
+                <div class="alert alert-success">
+                    Se inserto correctamente
+                </div>
+            </div>
+            <div class="mt-5 d-none" id="error">
+                <div class="alert alert-danger">
+                    Error en la insercion
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+
+<script src="recursos/funciones.js"></script>
+<script src="recursos/crearCategoria.js"></script>
+</body>
+</html>

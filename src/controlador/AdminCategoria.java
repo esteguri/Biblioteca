@@ -62,7 +62,6 @@ public class AdminCategoria extends HttpServlet {
             e.printStackTrace();
             search = "";
         }
-
         Categoria categoria = null;
         String json = null;
         if (search!=null && search.equals("name")){
@@ -86,6 +85,25 @@ public class AdminCategoria extends HttpServlet {
                 json = "{\"error\":500,\"mensaje\":\"Error en la peticion\"}";
             }
 
+        }else if(search!=null && search.equals("id")) {
+            categoria = new Categoria();
+            int id;
+            try{
+                id = Integer.parseInt(request.getParameter("id"));
+            }catch(Exception e){
+                e.printStackTrace();
+                id = -1;
+            }
+            if (id!=-1){
+                categoria.setId(id);
+                if (categoria.consultar()){
+                    json = new Gson().toJson(categoria);
+                }else{
+                    json = "{\"error\":500,\"mensaje\":\"No existe\"}";
+                }
+            }else{
+                json = "{\"error\":500,\"mensaje\":\"Error en la peticion\"}";
+            }
         }else{
             categoria = new Categoria();
             List<Categoria> categorias = categoria.consultasAll();

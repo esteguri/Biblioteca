@@ -139,9 +139,9 @@ public class Libro {
                 ResultSet rs = oConexion.getoResultSet();
                 if (rs.next()){
                     this.id = rs.getInt(1);
-                    this.autor = rs.getString(2);
-                    this.idCategoria = rs.getInt(3);
-                    this.autor = rs.getString(4);
+                    this.nombre = rs.getString(2);
+                    this.autor = rs.getString(3);
+                    this.idCategoria = rs.getInt(4);
                     this.estante = rs.getString(5);
                     oConexion.desconectar();
                     return true;

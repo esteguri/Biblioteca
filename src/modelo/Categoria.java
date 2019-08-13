@@ -90,4 +90,28 @@ public class Categoria {
         }
         return null;
     }
+
+    public boolean consultar(){
+        String SELECT = "SELECT * FROM `categoria` WHERE `id`= "+this.id;
+        Conexion oConexion = new Conexion();
+        oConexion.setSQL(SELECT);
+        if (oConexion.ejecutarConsulta()){
+            try{
+                ResultSet rs = oConexion.getoResultSet();
+                if (rs.next()){
+                    this.categoria = rs.getString(2);
+                    oConexion.desconectar();
+                    return true;
+                }else{
+                    oConexion.desconectar();
+                    return false;
+                }
+            }catch(Exception e){
+                oConexion.desconectar();
+                System.out.println("ERROR " + e.getMessage());
+                return false;
+            }
+        }
+        return false;
+    }
 }
